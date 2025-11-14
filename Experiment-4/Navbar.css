@@ -1,0 +1,107 @@
+/* Navbar container */
+.navbar {
+  position: fixed; /* instead of sticky */
+  top: 0;
+  left: 0;         /* ensure alignment at very left */
+  width: 100%;
+  height: 70px;
+  padding: 0 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(90deg, #4F46E5, #06B6D4);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+
+/* Brand: logo + title */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__icon {
+  width: 82px;
+  height: 82px;
+}
+
+.navbar__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.brand-fre {
+  color: #fff;
+}
+
+.brand-lyn {
+  color: #FFD700; /* Golden accent */
+}
+
+/* Links */
+.navbar__links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover underline */
+.navbar__links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #FFD700;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar__links li a:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
+.cta-btn {
+  background: #FFD700;
+  color: #111;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+  background: #FACC15;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar__links {
+    gap: 1rem;
+  }
+
+  .navbar__title {
+    font-size: 1.3rem;
+  }
+
+  .cta-btn {
+    padding: 0.4rem 1rem;
+  }
+}
